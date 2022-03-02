@@ -34,7 +34,9 @@ class WebAPIClient {
         urlComponents?.url.map {
             self.session.dataTask(with: $0) { data, response, error in
                 if let `error` =  error {
-                    completion(Result.failure(VerifyCarNumberError.other(error)))
+                    DispatchQueue.main.async {
+                        completion(Result.failure(VerifyCarNumberError.other(error)))
+                    }
                 }
                 else if let jsonData = data {
                     do {

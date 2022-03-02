@@ -20,7 +20,10 @@ class MainContentViewModel: ObservableObject {
     private var samplesRenderer: SamplesMetalRenderer?
     private var samplesMetalImporter: SamplesMetalImporter?
 
-    @Published var isShowingAlert: Bool = false
+    @Published var isErrorShowingAlert: Bool = false
+    @Published var isGoodCarShowingAlert: Bool = false
+    @Published var isBadCarShowingAlert: Bool = false
+
     @Published var alertMessage: String = ""
     @Published var alertTitle: String = ""
 
@@ -101,20 +104,27 @@ class MainContentViewModel: ObservableObject {
             webAPIClient.requestCheckCarNumber(carNumber: predictedLabel) {
                 switch $0 {
                 case .success(let response):
+                    self.alertTitle = NSLocalizedString("Car is lost", comment: "")
+                    self.alertMessage = response.data.description
+                    self.isBadCarShowingAlert = true
+                    
                     print(response.data)
                 case .failure(let error):
                     switch error {
                     case .logicError(let code, let message):
                         self.alertTitle = code
                         self.alertMessage = message
+                        
+                        self.isBadCarShowingAlert = true
                     case .jsonError(let error):
                         self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
+                        self.isErrorShowingAlert = true
                     case .other(let error):
                         self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
+                        self.isErrorShowingAlert = true
                     }
-                    self.isShowingAlert = true
                 }
             }
         }

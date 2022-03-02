@@ -30,10 +30,20 @@ struct MainContentView: View {
                     } label: {
                         Image(systemName: "paperplane")
                     }.padding()
-                        .alert(viewModel.alertTitle, isPresented: $viewModel.isShowingAlert, actions: {
+                        .alert(viewModel.alertTitle, isPresented: $viewModel.isErrorShowingAlert, actions: {
                             Button("OK", role: .cancel) { }
                         }, message: {
                             Text(viewModel.alertMessage)
+                        })
+                        .alert(viewModel.alertTitle, isPresented: $viewModel.isGoodCarShowingAlert, actions: {
+                            Button("OK", role: .cancel) { }
+                        }, message: {
+                            Text(viewModel.alertMessage).foregroundColor(Color.green)
+                        })
+                        .alert(viewModel.alertTitle, isPresented: $viewModel.isGoodCarShowingAlert, actions: {
+                            Button("OK", role: .cancel) { }
+                        }, message: {
+                            Text(viewModel.alertMessage).foregroundColor(Color.red)
                         })
                 }
             }
