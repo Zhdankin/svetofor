@@ -14,7 +14,6 @@ struct MainContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-
                 HStack {
                     CameraViewRepresentable(renderer: viewModel)
                         .frame(width: UIScreen.main.minSize, height: UIScreen.main.minSize * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
@@ -23,7 +22,6 @@ struct MainContentView: View {
                 
                 Spacer()
 
-                
                 VStack {
                     Text(viewModel.predictedLabel)
                     
@@ -32,6 +30,11 @@ struct MainContentView: View {
                     } label: {
                         Image(systemName: "paperplane")
                     }.padding()
+                        .alert(viewModel.alertTitle, isPresented: $viewModel.isShowingAlert, actions: {
+                            Button("OK", role: .cancel) { }
+                        }, message: {
+                            Text(viewModel.alertMessage)
+                        })
                 }
             }
         }

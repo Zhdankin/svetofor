@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EB2B71DD27CF749800FFC2E0 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B71DC27CF749800FFC2E0 /* UIScreen.swift */; };
+		EB2B71E027CF835C00FFC2E0 /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B71DF27CF835B00FFC2E0 /* WebClient.swift */; };
+		EB2B71E327CF858700FFC2E0 /* CarNumberCheckDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B71E227CF858700FFC2E0 /* CarNumberCheckDataResponse.swift */; };
+		EB2B71E527CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B71E427CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift */; };
+		EB2B71E727CFB75800FFC2E0 /* VerifyCarNumberError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B71E627CFB75800FFC2E0 /* VerifyCarNumberError.swift */; };
 		EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */; };
 		EB4A6DFA273BA106005A30AB /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6DF9273BA106005A30AB /* MainContentView.swift */; };
 		EB4A6DFC273BA108005A30AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6DFB273BA108005A30AB /* Assets.xcassets */; };
@@ -58,6 +62,10 @@
 
 /* Begin PBXFileReference section */
 		EB2B71DC27CF749800FFC2E0 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIScreen.swift; path = Svetofor/Sources/ClassExtensions/UIScreen.swift; sourceTree = SOURCE_ROOT; };
+		EB2B71DF27CF835B00FFC2E0 /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebClient.swift; path = Svetofor/Sources/Network/WebClient.swift; sourceTree = SOURCE_ROOT; };
+		EB2B71E227CF858700FFC2E0 /* CarNumberCheckDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarNumberCheckDataResponse.swift; path = Svetofor/Sources/Network/Responses/CarNumberCheckDataResponse.swift; sourceTree = SOURCE_ROOT; };
+		EB2B71E427CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarNumberCheckDataErrorResponse.swift; path = Svetofor/Sources/Network/Responses/CarNumberCheckDataErrorResponse.swift; sourceTree = SOURCE_ROOT; };
+		EB2B71E627CFB75800FFC2E0 /* VerifyCarNumberError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerifyCarNumberError.swift; path = Svetofor/Sources/Network/VerifyCarNumberError.swift; sourceTree = SOURCE_ROOT; };
 		EB4A6DF4273BA106005A30AB /* CarNumberDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNumberDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TongueManipulatorApp.swift; sourceTree = "<group>"; };
 		EB4A6DF9273BA106005A30AB /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +129,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB2B71DE27CF80C600FFC2E0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EB2B71E127CF856100FFC2E0 /* Responses */,
+				EB2B71DF27CF835B00FFC2E0 /* WebClient.swift */,
+				EB2B71E627CFB75800FFC2E0 /* VerifyCarNumberError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EB2B71E127CF856100FFC2E0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				EB2B71E227CF858700FFC2E0 /* CarNumberCheckDataResponse.swift */,
+				EB2B71E427CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		EB4A6DEB273BA106005A30AB = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +195,7 @@
 		EB4A6E06273BA14F005A30AB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EB2B71DE27CF80C600FFC2E0 /* Network */,
 				EB4A6EB8273BA854005A30AB /* ClassExtensions */,
 				EB4A6E0B273BA2E3005A30AB /* Engine */,
 				EB4A6E07273BA17B005A30AB /* Screens */,
@@ -387,6 +415,8 @@
 				EB4A6E69273BA462005A30AB /* AudioSampler.swift in Sources */,
 				EB565EEC273C028100D3A681 /* CameraRenderer.swift in Sources */,
 				EB4A6E0D273BA323005A30AB /* CameraViewRepresentable.swift in Sources */,
+				EB2B71E327CF858700FFC2E0 /* CarNumberCheckDataResponse.swift in Sources */,
+				EB2B71E027CF835C00FFC2E0 /* WebClient.swift in Sources */,
 				EB565EF3273C60B700D3A681 /* PhotosPoolViewModel.swift in Sources */,
 				EB4A6EB4273BA7E8005A30AB /* SamplesImporter.swift in Sources */,
 				EB4A6EAD273BA7E8005A30AB /* CVPixelBufferPoolExtensions.swift in Sources */,
@@ -406,6 +436,7 @@
 				EB4A6EB3273BA7E8005A30AB /* CVPixelBufferExtensions.swift in Sources */,
 				EB565EEE273C04DD00D3A681 /* MetalHandledView.swift in Sources */,
 				EB4A6E0A273BA1AA005A30AB /* MainContentViewModel.swift in Sources */,
+				EB2B71E527CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift in Sources */,
 				EB4A6E99273BA52C005A30AB /* FaceAdjustShader.metal in Sources */,
 				EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */,
 				EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */,
@@ -413,6 +444,7 @@
 				EB4A6E61273BA462005A30AB /* AudioRecorder.swift in Sources */,
 				EB4A6EBD273BA887005A30AB /* CGImageExtensions.swift in Sources */,
 				EB4A6EAE273BA7E8005A30AB /* Shaders.metal in Sources */,
+				EB2B71E727CFB75800FFC2E0 /* VerifyCarNumberError.swift in Sources */,
 				EB565EF1273C604100D3A681 /* PhotosPoolView.swift in Sources */,
 				EB4A6E63273BA462005A30AB /* CaptureSessionManager.swift in Sources */,
 				EB4A6E98273BA52C005A30AB /* ImageCropping.metal in Sources */,

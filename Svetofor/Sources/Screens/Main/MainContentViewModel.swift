@@ -16,8 +16,13 @@ class MainContentViewModel: ObservableObject {
     let photosPoolViewModel = PhotosPoolViewModel()
     
     let photoCapturer: PhotoCapturer
+    let webAPIClient: WebAPIClient
     private var samplesRenderer: SamplesMetalRenderer?
     private var samplesMetalImporter: SamplesMetalImporter?
+
+    @Published var isShowingAlert: Bool = false
+    @Published var alertMessage: String = ""
+    @Published var alertTitle: String = ""
 
     @Published var isCameraAuthorized: Bool = false
     @Published var textureWidth: CGFloat = 1.0
@@ -28,8 +33,11 @@ class MainContentViewModel: ObservableObject {
 
     @Published var predictedLabel: String = ""
 
-    init(photoCapturer: PhotoCapturer = PhotoCapturer()) {
+    
+    
+    init(photoCapturer: PhotoCapturer = PhotoCapturer(), webAPIClient: WebAPIClient = WebAPIClient()) {
         self.photoCapturer = photoCapturer
+        self.webAPIClient = webAPIClient
     }
     
     func changeShouldStorePictures() {
@@ -89,7 +97,27 @@ class MainContentViewModel: ObservableObject {
     }
     
     func performVerifyCarNumber() {
-        
+        if predictedLabel.count > 0 {
+            webAPIClient.requestCheckCarNumber(carNumber: predictedLabel) {
+                switch $0 {
+                case .success(let response):
+                    print(response.data)
+                case .failure(let error):
+                    switch error {
+                    case .logicError(let code, let message):
+                        self.alertTitle = code
+                        self.alertMessage = message
+                    case .jsonError(let error):
+                        self.alertTitle = NSLocalizedString("Error", comment: "")
+                        self.alertMessage = error.localizedDescription
+                    case .other(let error):
+                        self.alertTitle = NSLocalizedString("Error", comment: "")
+                        self.alertMessage = error.localizedDescription
+                    }
+                    self.isShowingAlert = true
+                }
+            }
+        }
     }
 
 }
