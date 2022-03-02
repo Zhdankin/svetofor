@@ -14,17 +14,24 @@ struct MainContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
-                Text(viewModel.predictedLabel)
 
                 HStack {
                     CameraViewRepresentable(renderer: viewModel)
-                        .frame(width: 300.0, height: 300.0 * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
+                        .frame(width: UIScreen.main.minSize, height: UIScreen.main.minSize * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
                         .padding()
+                }
+                
+                Spacer()
+
+                
+                VStack {
+                    Text(viewModel.predictedLabel)
                     
-                    Spacer()
-                    
-                    
+                    Button {
+                        viewModel.performVerifyCarNumber()
+                    } label: {
+                        Image(systemName: "paperplane")
+                    }.padding()
                 }
             }
         }

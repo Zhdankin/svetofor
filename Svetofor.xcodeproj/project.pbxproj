@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB2B71DD27CF749800FFC2E0 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B71DC27CF749800FFC2E0 /* UIScreen.swift */; };
 		EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */; };
 		EB4A6DFA273BA106005A30AB /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6DF9273BA106005A30AB /* MainContentView.swift */; };
 		EB4A6DFC273BA108005A30AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6DFB273BA108005A30AB /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB2B71DC27CF749800FFC2E0 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIScreen.swift; path = Svetofor/Sources/ClassExtensions/UIScreen.swift; sourceTree = SOURCE_ROOT; };
 		EB4A6DF4273BA106005A30AB /* CarNumberDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNumberDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TongueManipulatorApp.swift; sourceTree = "<group>"; };
 		EB4A6DF9273BA106005A30AB /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				EB4A6EBB273BA887005A30AB /* MTLTextureExtensions.swift */,
 				EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */,
 				EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */,
+				EB2B71DC27CF749800FFC2E0 /* UIScreen.swift */,
 			);
 			path = ClassExtensions;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				EB4A6EB5273BA7E8005A30AB /* TextureCacheManager.swift in Sources */,
 				EB4A6EB1273BA7E8005A30AB /* FaceDetector.swift in Sources */,
 				EB565EF7273C774100D3A681 /* PhotoView.swift in Sources */,
+				EB2B71DD27CF749800FFC2E0 /* UIScreen.swift in Sources */,
 				EB4A6EB0273BA7E8005A30AB /* MTLDeviceExtensions.swift in Sources */,
 				EB4A6E7F273BA4F2005A30AB /* Filter.swift in Sources */,
 				EB4A6E66273BA462005A30AB /* VideoCapturerConfiguration.swift in Sources */,

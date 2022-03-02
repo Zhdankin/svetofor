@@ -87,6 +87,10 @@ class MainContentViewModel: ObservableObject {
             }
         }
     }
+    
+    func performVerifyCarNumber() {
+        
+    }
 
 }
 
