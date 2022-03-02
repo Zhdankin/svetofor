@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */; };
+		EB4A6DFA273BA106005A30AB /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6DF9273BA106005A30AB /* MainContentView.swift */; };
+		EB4A6DFC273BA108005A30AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6DFB273BA108005A30AB /* Assets.xcassets */; };
+		EB4A6DFF273BA108005A30AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6DFE273BA108005A30AB /* Preview Assets.xcassets */; };
+		EB4A6E0A273BA1AA005A30AB /* MainContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E09273BA1AA005A30AB /* MainContentViewModel.swift */; };
+		EB4A6E0D273BA323005A30AB /* CameraViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E0C273BA323005A30AB /* CameraViewRepresentable.swift */; };
+		EB4A6E61273BA462005A30AB /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E17273BA432005A30AB /* AudioRecorder.swift */; };
+		EB4A6E62273BA462005A30AB /* FakeCaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E19273BA432005A30AB /* FakeCaptureSessionManager.swift */; };
+		EB4A6E63273BA462005A30AB /* CaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E18273BA432005A30AB /* CaptureSessionManager.swift */; };
+		EB4A6E64273BA462005A30AB /* Outputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E15273BA432005A30AB /* Outputer.swift */; };
+		EB4A6E65273BA462005A30AB /* VideoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E12273BA431005A30AB /* VideoCapturer.swift */; };
+		EB4A6E66273BA462005A30AB /* VideoCapturerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E11273BA431005A30AB /* VideoCapturerConfiguration.swift */; };
+		EB4A6E67273BA462005A30AB /* PhotoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E13273BA432005A30AB /* PhotoCapturer.swift */; };
+		EB4A6E68273BA462005A30AB /* VideoSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E14273BA432005A30AB /* VideoSampler.swift */; };
+		EB4A6E69273BA462005A30AB /* AudioSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E16273BA432005A30AB /* AudioSampler.swift */; };
+		EB4A6E7F273BA4F2005A30AB /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E3D273BA456005A30AB /* Filter.swift */; };
+		EB4A6E81273BA4F2005A30AB /* YUVImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E31273BA456005A30AB /* YUVImporter.swift */; };
+		EB4A6E83273BA4F2005A30AB /* YUVImporterShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E25273BA456005A30AB /* YUVImporterShaders.metal */; };
+		EB4A6E84273BA4F2005A30AB /* CommonUtils.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E26273BA456005A30AB /* CommonUtils.metal */; };
+		EB4A6E92273BA522005A30AB /* ColorShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E30273BA456005A30AB /* ColorShaders.metal */; };
+		EB4A6E93273BA522005A30AB /* ColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E2F273BA456005A30AB /* ColorFilter.swift */; };
+		EB4A6E96273BA52C005A30AB /* ImageCropping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E38273BA456005A30AB /* ImageCropping.swift */; };
+		EB4A6E97273BA52C005A30AB /* FaceAdjustFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E39273BA456005A30AB /* FaceAdjustFilter.swift */; };
+		EB4A6E98273BA52C005A30AB /* ImageCropping.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E36273BA456005A30AB /* ImageCropping.metal */; };
+		EB4A6E99273BA52C005A30AB /* FaceAdjustShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E37273BA456005A30AB /* FaceAdjustShader.metal */; };
+		EB4A6E9E273BA53C005A30AB /* FaceOverlayShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E42273BA456005A30AB /* FaceOverlayShader.metal */; };
+		EB4A6E9F273BA53C005A30AB /* FaceOverlayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E43273BA456005A30AB /* FaceOverlayFilter.swift */; };
+		EB4A6EAD273BA7E8005A30AB /* CVPixelBufferPoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EA4273BA7E8005A30AB /* CVPixelBufferPoolExtensions.swift */; };
+		EB4A6EAE273BA7E8005A30AB /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EA5273BA7E8005A30AB /* Shaders.metal */; };
+		EB4A6EAF273BA7E8005A30AB /* TextureRendererStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EA6273BA7E8005A30AB /* TextureRendererStorage.swift */; };
+		EB4A6EB0273BA7E8005A30AB /* MTLDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EA7273BA7E8005A30AB /* MTLDeviceExtensions.swift */; };
+		EB4A6EB1273BA7E8005A30AB /* FaceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EA8273BA7E8005A30AB /* FaceDetector.swift */; };
+		EB4A6EB2273BA7E8005A30AB /* SamplesRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EA9273BA7E8005A30AB /* SamplesRenderer.swift */; };
+		EB4A6EB3273BA7E8005A30AB /* CVPixelBufferExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EAA273BA7E8005A30AB /* CVPixelBufferExtensions.swift */; };
+		EB4A6EB4273BA7E8005A30AB /* SamplesImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EAB273BA7E8005A30AB /* SamplesImporter.swift */; };
+		EB4A6EB5273BA7E8005A30AB /* TextureCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EAC273BA7E8005A30AB /* TextureCacheManager.swift */; };
+		EB4A6EBD273BA887005A30AB /* CGImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EB9273BA887005A30AB /* CGImageExtensions.swift */; };
+		EB4A6EBE273BA887005A30AB /* CGContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EBA273BA887005A30AB /* CGContextExtensions.swift */; };
+		EB4A6EBF273BA887005A30AB /* MTLTextureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EBB273BA887005A30AB /* MTLTextureExtensions.swift */; };
+		EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */; };
+		EB4A6EC2273BA8BC005A30AB /* TonguePositionClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EC1273BA8BC005A30AB /* TonguePositionClassification.mlmodel */; };
+		EB565EEC273C028100D3A681 /* CameraRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EEB273C028100D3A681 /* CameraRenderer.swift */; };
+		EB565EEE273C04DD00D3A681 /* MetalHandledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EED273C04DD00D3A681 /* MetalHandledView.swift */; };
+		EB565EF1273C604100D3A681 /* PhotosPoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF0273C604100D3A681 /* PhotosPoolView.swift */; };
+		EB565EF3273C60B700D3A681 /* PhotosPoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */; };
+		EB565EF5273C626F00D3A681 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */; };
+		EB565EF7273C774100D3A681 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF6273C774100D3A681 /* PhotoView.swift */; };
+		EB565EF9273D68FB00D3A681 /* TongueClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF8273D68FA00D3A681 /* TongueClassifier.mlmodel */; };
+		EB565EFB273E728E00D3A681 /* testimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EB565EFA273E728D00D3A681 /* testimage.png */; };
+		EBC88A9A27CF414300642B90 /* CarNumberDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC88A9927CF414300642B90 /* CarNumberDetector.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EB4A6DF4273BA106005A30AB /* CarNumberDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNumberDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TongueManipulatorApp.swift; sourceTree = "<group>"; };
+		EB4A6DF9273BA106005A30AB /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		EB4A6DFB273BA108005A30AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB4A6DFE273BA108005A30AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EB4A6E09273BA1AA005A30AB /* MainContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewModel.swift; sourceTree = "<group>"; };
+		EB4A6E0C273BA323005A30AB /* CameraViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewRepresentable.swift; sourceTree = "<group>"; };
+		EB4A6E0E273BA393005A30AB /* svetofor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = svetofor.entitlements; sourceTree = "<group>"; };
+		EB4A6E11273BA431005A30AB /* VideoCapturerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturerConfiguration.swift; sourceTree = "<group>"; };
+		EB4A6E12273BA431005A30AB /* VideoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturer.swift; sourceTree = "<group>"; };
+		EB4A6E13273BA432005A30AB /* PhotoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapturer.swift; sourceTree = "<group>"; };
+		EB4A6E14273BA432005A30AB /* VideoSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSampler.swift; sourceTree = "<group>"; };
+		EB4A6E15273BA432005A30AB /* Outputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outputer.swift; sourceTree = "<group>"; };
+		EB4A6E16273BA432005A30AB /* AudioSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSampler.swift; sourceTree = "<group>"; };
+		EB4A6E17273BA432005A30AB /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		EB4A6E18273BA432005A30AB /* CaptureSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionManager.swift; sourceTree = "<group>"; };
+		EB4A6E19273BA432005A30AB /* FakeCaptureSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCaptureSessionManager.swift; sourceTree = "<group>"; };
+		EB4A6E25273BA456005A30AB /* YUVImporterShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YUVImporterShaders.metal; sourceTree = "<group>"; };
+		EB4A6E26273BA456005A30AB /* CommonUtils.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CommonUtils.metal; sourceTree = "<group>"; };
+		EB4A6E2D273BA456005A30AB /* CommonUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		EB4A6E2F273BA456005A30AB /* ColorFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilter.swift; sourceTree = "<group>"; };
+		EB4A6E30273BA456005A30AB /* ColorShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorShaders.metal; sourceTree = "<group>"; };
+		EB4A6E31273BA456005A30AB /* YUVImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUVImporter.swift; sourceTree = "<group>"; };
+		EB4A6E36273BA456005A30AB /* ImageCropping.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ImageCropping.metal; sourceTree = "<group>"; };
+		EB4A6E37273BA456005A30AB /* FaceAdjustShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FaceAdjustShader.metal; sourceTree = "<group>"; };
+		EB4A6E38273BA456005A30AB /* ImageCropping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropping.swift; sourceTree = "<group>"; };
+		EB4A6E39273BA456005A30AB /* FaceAdjustFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAdjustFilter.swift; sourceTree = "<group>"; };
+		EB4A6E3D273BA456005A30AB /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		EB4A6E42273BA456005A30AB /* FaceOverlayShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FaceOverlayShader.metal; sourceTree = "<group>"; };
+		EB4A6E43273BA456005A30AB /* FaceOverlayFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceOverlayFilter.swift; sourceTree = "<group>"; };
+		EB4A6EA4273BA7E8005A30AB /* CVPixelBufferPoolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferPoolExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EA5273BA7E8005A30AB /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		EB4A6EA6273BA7E8005A30AB /* TextureRendererStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureRendererStorage.swift; sourceTree = "<group>"; };
+		EB4A6EA7273BA7E8005A30AB /* MTLDeviceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLDeviceExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EA8273BA7E8005A30AB /* FaceDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
+		EB4A6EA9273BA7E8005A30AB /* SamplesRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplesRenderer.swift; sourceTree = "<group>"; };
+		EB4A6EAA273BA7E8005A30AB /* CVPixelBufferExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EAB273BA7E8005A30AB /* SamplesImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplesImporter.swift; sourceTree = "<group>"; };
+		EB4A6EAC273BA7E8005A30AB /* TextureCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureCacheManager.swift; sourceTree = "<group>"; };
+		EB4A6EB9273BA887005A30AB /* CGImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImageExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EBA273BA887005A30AB /* CGContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGContextExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EBB273BA887005A30AB /* MTLTextureExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLTextureExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		EB4A6EC1273BA8BC005A30AB /* TonguePositionClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TonguePositionClassification.mlmodel; sourceTree = "<group>"; };
+		EB565EEB273C028100D3A681 /* CameraRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRenderer.swift; sourceTree = "<group>"; };
+		EB565EED273C04DD00D3A681 /* MetalHandledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalHandledView.swift; sourceTree = "<group>"; };
+		EB565EF0273C604100D3A681 /* PhotosPoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPoolView.swift; sourceTree = "<group>"; };
+		EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPoolViewModel.swift; sourceTree = "<group>"; };
+		EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
+		EB565EF6273C774100D3A681 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		EB565EF8273D68FA00D3A681 /* TongueClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TongueClassifier.mlmodel; sourceTree = "<group>"; };
+		EB565EFA273E728D00D3A681 /* testimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testimage.png; sourceTree = "<group>"; };
+		EBC88A9927CF414300642B90 /* CarNumberDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNumberDetector.swift; sourceTree = "<group>"; };
+		EBC88A9B27CF665900642B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB4A6DF1273BA106005A30AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB4A6DEB273BA106005A30AB = {
+			isa = PBXGroup;
+			children = (
+				EB4A6DF6273BA106005A30AB /* svetofor */,
+				EB4A6DF5273BA106005A30AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB4A6DF5273BA106005A30AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6DF4273BA106005A30AB /* CarNumberDetector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB4A6DF6273BA106005A30AB /* svetofor */ = {
+			isa = PBXGroup;
+			children = (
+				EBC88A9B27CF665900642B90 /* Info.plist */,
+				EB4A6E0E273BA393005A30AB /* svetofor.entitlements */,
+				EB4A6E06273BA14F005A30AB /* Sources */,
+				EB4A6E05273BA148005A30AB /* Resources */,
+				EB4A6DFD273BA108005A30AB /* Preview Content */,
+			);
+			path = svetofor;
+			sourceTree = "<group>";
+		};
+		EB4A6DFD273BA108005A30AB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6DFE273BA108005A30AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EB4A6E05273BA148005A30AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB565EFA273E728D00D3A681 /* testimage.png */,
+				EB4A6EC1273BA8BC005A30AB /* TonguePositionClassification.mlmodel */,
+				EB565EF8273D68FA00D3A681 /* TongueClassifier.mlmodel */,
+				EB4A6DFB273BA108005A30AB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB4A6E06273BA14F005A30AB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6EB8273BA854005A30AB /* ClassExtensions */,
+				EB4A6E0B273BA2E3005A30AB /* Engine */,
+				EB4A6E07273BA17B005A30AB /* Screens */,
+				EB4A6DF7273BA106005A30AB /* TongueManipulatorApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EB4A6E07273BA17B005A30AB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E08273BA192005A30AB /* Main */,
+				EB565EEF273C602000D3A681 /* PhotosPool */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EB4A6E08273BA192005A30AB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6DF9273BA106005A30AB /* MainContentView.swift */,
+				EB4A6E09273BA1AA005A30AB /* MainContentViewModel.swift */,
+				EB4A6E0C273BA323005A30AB /* CameraViewRepresentable.swift */,
+				EB565EEB273C028100D3A681 /* CameraRenderer.swift */,
+				EB565EED273C04DD00D3A681 /* MetalHandledView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EB4A6E0B273BA2E3005A30AB /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E0F273BA41C005A30AB /* Rendering */,
+				EB4A6E10273BA423005A30AB /* Capture */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		EB4A6E0F273BA41C005A30AB /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E23273BA456005A30AB /* Filters */,
+				EB4A6EAA273BA7E8005A30AB /* CVPixelBufferExtensions.swift */,
+				EB4A6EA4273BA7E8005A30AB /* CVPixelBufferPoolExtensions.swift */,
+				EB4A6EA8273BA7E8005A30AB /* FaceDetector.swift */,
+				EBC88A9927CF414300642B90 /* CarNumberDetector.swift */,
+				EB4A6EA7273BA7E8005A30AB /* MTLDeviceExtensions.swift */,
+				EB4A6EAB273BA7E8005A30AB /* SamplesImporter.swift */,
+				EB4A6EA9273BA7E8005A30AB /* SamplesRenderer.swift */,
+				EB4A6EA5273BA7E8005A30AB /* Shaders.metal */,
+				EB4A6EAC273BA7E8005A30AB /* TextureCacheManager.swift */,
+				EB4A6EA6273BA7E8005A30AB /* TextureRendererStorage.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		EB4A6E10273BA423005A30AB /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E17273BA432005A30AB /* AudioRecorder.swift */,
+				EB4A6E16273BA432005A30AB /* AudioSampler.swift */,
+				EB4A6E18273BA432005A30AB /* CaptureSessionManager.swift */,
+				EB4A6E19273BA432005A30AB /* FakeCaptureSessionManager.swift */,
+				EB4A6E15273BA432005A30AB /* Outputer.swift */,
+				EB4A6E13273BA432005A30AB /* PhotoCapturer.swift */,
+				EB4A6E12273BA431005A30AB /* VideoCapturer.swift */,
+				EB4A6E11273BA431005A30AB /* VideoCapturerConfiguration.swift */,
+				EB4A6E14273BA432005A30AB /* VideoSampler.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		EB4A6E23273BA456005A30AB /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E25273BA456005A30AB /* YUVImporterShaders.metal */,
+				EB4A6E26273BA456005A30AB /* CommonUtils.metal */,
+				EB4A6E2D273BA456005A30AB /* CommonUtils.h */,
+				EB4A6E2E273BA456005A30AB /* Color */,
+				EB4A6E31273BA456005A30AB /* YUVImporter.swift */,
+				EB4A6E35273BA456005A30AB /* FaceAdjust */,
+				EB4A6E3D273BA456005A30AB /* Filter.swift */,
+				EB4A6E41273BA456005A30AB /* FaceOverlay */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		EB4A6E2E273BA456005A30AB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E2F273BA456005A30AB /* ColorFilter.swift */,
+				EB4A6E30273BA456005A30AB /* ColorShaders.metal */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		EB4A6E35273BA456005A30AB /* FaceAdjust */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E36273BA456005A30AB /* ImageCropping.metal */,
+				EB4A6E37273BA456005A30AB /* FaceAdjustShader.metal */,
+				EB4A6E38273BA456005A30AB /* ImageCropping.swift */,
+				EB4A6E39273BA456005A30AB /* FaceAdjustFilter.swift */,
+			);
+			path = FaceAdjust;
+			sourceTree = "<group>";
+		};
+		EB4A6E41273BA456005A30AB /* FaceOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6E42273BA456005A30AB /* FaceOverlayShader.metal */,
+				EB4A6E43273BA456005A30AB /* FaceOverlayFilter.swift */,
+			);
+			path = FaceOverlay;
+			sourceTree = "<group>";
+		};
+		EB4A6EB8273BA854005A30AB /* ClassExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6EBA273BA887005A30AB /* CGContextExtensions.swift */,
+				EB4A6EB9273BA887005A30AB /* CGImageExtensions.swift */,
+				EB4A6EBB273BA887005A30AB /* MTLTextureExtensions.swift */,
+				EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */,
+				EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */,
+			);
+			path = ClassExtensions;
+			sourceTree = "<group>";
+		};
+		EB565EEF273C602000D3A681 /* PhotosPool */ = {
+			isa = PBXGroup;
+			children = (
+				EB565EF0273C604100D3A681 /* PhotosPoolView.swift */,
+				EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */,
+				EB565EF6273C774100D3A681 /* PhotoView.swift */,
+			);
+			path = PhotosPool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB4A6DF3273BA106005A30AB /* Svetofor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB4A6E02273BA108005A30AB /* Build configuration list for PBXNativeTarget "Svetofor" */;
+			buildPhases = (
+				EB4A6DF0273BA106005A30AB /* Sources */,
+				EB4A6DF1273BA106005A30AB /* Frameworks */,
+				EB4A6DF2273BA106005A30AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Svetofor;
+			productName = TongueManipulator;
+			productReference = EB4A6DF4273BA106005A30AB /* CarNumberDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB4A6DEC273BA106005A30AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					EB4A6DF3273BA106005A30AB = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = EB4A6DEF273BA106005A30AB /* Build configuration list for PBXProject "Svetofor" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB4A6DEB273BA106005A30AB;
+			productRefGroup = EB4A6DF5273BA106005A30AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB4A6DF3273BA106005A30AB /* Svetofor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB4A6DF2273BA106005A30AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB4A6DFF273BA108005A30AB /* Preview Assets.xcassets in Resources */,
+				EB4A6DFC273BA108005A30AB /* Assets.xcassets in Resources */,
+				EB565EFB273E728E00D3A681 /* testimage.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB4A6DF0273BA106005A30AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB4A6E68273BA462005A30AB /* VideoSampler.swift in Sources */,
+				EB4A6EB5273BA7E8005A30AB /* TextureCacheManager.swift in Sources */,
+				EB4A6EB1273BA7E8005A30AB /* FaceDetector.swift in Sources */,
+				EB565EF7273C774100D3A681 /* PhotoView.swift in Sources */,
+				EB4A6EB0273BA7E8005A30AB /* MTLDeviceExtensions.swift in Sources */,
+				EB4A6E7F273BA4F2005A30AB /* Filter.swift in Sources */,
+				EB4A6E66273BA462005A30AB /* VideoCapturerConfiguration.swift in Sources */,
+				EB4A6E69273BA462005A30AB /* AudioSampler.swift in Sources */,
+				EB565EEC273C028100D3A681 /* CameraRenderer.swift in Sources */,
+				EB4A6E0D273BA323005A30AB /* CameraViewRepresentable.swift in Sources */,
+				EB565EF3273C60B700D3A681 /* PhotosPoolViewModel.swift in Sources */,
+				EB4A6EB4273BA7E8005A30AB /* SamplesImporter.swift in Sources */,
+				EB4A6EAD273BA7E8005A30AB /* CVPixelBufferPoolExtensions.swift in Sources */,
+				EB4A6EBF273BA887005A30AB /* MTLTextureExtensions.swift in Sources */,
+				EB4A6E67273BA462005A30AB /* PhotoCapturer.swift in Sources */,
+				EBC88A9A27CF414300642B90 /* CarNumberDetector.swift in Sources */,
+				EB4A6E92273BA522005A30AB /* ColorShaders.metal in Sources */,
+				EB4A6EAF273BA7E8005A30AB /* TextureRendererStorage.swift in Sources */,
+				EB4A6EB2273BA7E8005A30AB /* SamplesRenderer.swift in Sources */,
+				EB4A6E81273BA4F2005A30AB /* YUVImporter.swift in Sources */,
+				EB4A6E83273BA4F2005A30AB /* YUVImporterShaders.metal in Sources */,
+				EB4A6E9F273BA53C005A30AB /* FaceOverlayFilter.swift in Sources */,
+				EB4A6E64273BA462005A30AB /* Outputer.swift in Sources */,
+				EB4A6DFA273BA106005A30AB /* MainContentView.swift in Sources */,
+				EB4A6E65273BA462005A30AB /* VideoCapturer.swift in Sources */,
+				EB4A6E62273BA462005A30AB /* FakeCaptureSessionManager.swift in Sources */,
+				EB4A6EB3273BA7E8005A30AB /* CVPixelBufferExtensions.swift in Sources */,
+				EB565EEE273C04DD00D3A681 /* MetalHandledView.swift in Sources */,
+				EB4A6E0A273BA1AA005A30AB /* MainContentViewModel.swift in Sources */,
+				EB4A6EC2273BA8BC005A30AB /* TonguePositionClassification.mlmodel in Sources */,
+				EB4A6E99273BA52C005A30AB /* FaceAdjustShader.metal in Sources */,
+				EB4A6E97273BA52C005A30AB /* FaceAdjustFilter.swift in Sources */,
+				EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */,
+				EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */,
+				EB4A6E9E273BA53C005A30AB /* FaceOverlayShader.metal in Sources */,
+				EB4A6E61273BA462005A30AB /* AudioRecorder.swift in Sources */,
+				EB4A6EBD273BA887005A30AB /* CGImageExtensions.swift in Sources */,
+				EB4A6EAE273BA7E8005A30AB /* Shaders.metal in Sources */,
+				EB565EF1273C604100D3A681 /* PhotosPoolView.swift in Sources */,
+				EB4A6E63273BA462005A30AB /* CaptureSessionManager.swift in Sources */,
+				EB4A6E98273BA52C005A30AB /* ImageCropping.metal in Sources */,
+				EB4A6E84273BA4F2005A30AB /* CommonUtils.metal in Sources */,
+				EB4A6E93273BA522005A30AB /* ColorFilter.swift in Sources */,
+				EB565EF5273C626F00D3A681 /* FileManagerExtensions.swift in Sources */,
+				EB4A6E96273BA52C005A30AB /* ImageCropping.swift in Sources */,
+				EB4A6EBE273BA887005A30AB /* CGContextExtensions.swift in Sources */,
+				EB565EF9273D68FB00D3A681 /* TongueClassifier.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EB4A6E00273BA108005A30AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB4A6E01273BA108005A30AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB4A6E03273BA108005A30AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Svetofor/svetofor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Svetofor/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Application use camera for detect is car was lost";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobacorn.CarNumberDetector;
+				PRODUCT_NAME = CarNumberDetector;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB4A6E04273BA108005A30AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Svetofor/svetofor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Svetofor/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Application use camera for detect is car was lost";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobacorn.CarNumberDetector;
+				PRODUCT_NAME = CarNumberDetector;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB4A6DEF273BA106005A30AB /* Build configuration list for PBXProject "Svetofor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB4A6E00273BA108005A30AB /* Debug */,
+				EB4A6E01273BA108005A30AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB4A6E02273BA108005A30AB /* Build configuration list for PBXNativeTarget "Svetofor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB4A6E03273BA108005A30AB /* Debug */,
+				EB4A6E04273BA108005A30AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB4A6DEC273BA106005A30AB /* Project object */;
+}
