@@ -14,7 +14,7 @@ struct MainContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
+                ZStack {
                     CameraViewRepresentable(renderer: viewModel)
                         .frame(width: UIScreen.main.minSize, height: UIScreen.main.minSize * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
                         .padding()
