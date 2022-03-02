@@ -29,7 +29,6 @@
 		EB4A6E92273BA522005A30AB /* ColorShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E30273BA456005A30AB /* ColorShaders.metal */; };
 		EB4A6E93273BA522005A30AB /* ColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E2F273BA456005A30AB /* ColorFilter.swift */; };
 		EB4A6E96273BA52C005A30AB /* ImageCropping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E38273BA456005A30AB /* ImageCropping.swift */; };
-		EB4A6E97273BA52C005A30AB /* FaceAdjustFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E39273BA456005A30AB /* FaceAdjustFilter.swift */; };
 		EB4A6E98273BA52C005A30AB /* ImageCropping.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E36273BA456005A30AB /* ImageCropping.metal */; };
 		EB4A6E99273BA52C005A30AB /* FaceAdjustShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E37273BA456005A30AB /* FaceAdjustShader.metal */; };
 		EB4A6E9E273BA53C005A30AB /* FaceOverlayShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6E42273BA456005A30AB /* FaceOverlayShader.metal */; };
@@ -47,15 +46,12 @@
 		EB4A6EBE273BA887005A30AB /* CGContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EBA273BA887005A30AB /* CGContextExtensions.swift */; };
 		EB4A6EBF273BA887005A30AB /* MTLTextureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EBB273BA887005A30AB /* MTLTextureExtensions.swift */; };
 		EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */; };
-		EB4A6EC2273BA8BC005A30AB /* TonguePositionClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6EC1273BA8BC005A30AB /* TonguePositionClassification.mlmodel */; };
 		EB565EEC273C028100D3A681 /* CameraRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EEB273C028100D3A681 /* CameraRenderer.swift */; };
 		EB565EEE273C04DD00D3A681 /* MetalHandledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EED273C04DD00D3A681 /* MetalHandledView.swift */; };
 		EB565EF1273C604100D3A681 /* PhotosPoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF0273C604100D3A681 /* PhotosPoolView.swift */; };
 		EB565EF3273C60B700D3A681 /* PhotosPoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */; };
 		EB565EF5273C626F00D3A681 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */; };
 		EB565EF7273C774100D3A681 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF6273C774100D3A681 /* PhotoView.swift */; };
-		EB565EF9273D68FB00D3A681 /* TongueClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF8273D68FA00D3A681 /* TongueClassifier.mlmodel */; };
-		EB565EFB273E728E00D3A681 /* testimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EB565EFA273E728D00D3A681 /* testimage.png */; };
 		EBC88A9A27CF414300642B90 /* CarNumberDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC88A9927CF414300642B90 /* CarNumberDetector.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +82,6 @@
 		EB4A6E36273BA456005A30AB /* ImageCropping.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ImageCropping.metal; sourceTree = "<group>"; };
 		EB4A6E37273BA456005A30AB /* FaceAdjustShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FaceAdjustShader.metal; sourceTree = "<group>"; };
 		EB4A6E38273BA456005A30AB /* ImageCropping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropping.swift; sourceTree = "<group>"; };
-		EB4A6E39273BA456005A30AB /* FaceAdjustFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAdjustFilter.swift; sourceTree = "<group>"; };
 		EB4A6E3D273BA456005A30AB /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		EB4A6E42273BA456005A30AB /* FaceOverlayShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FaceOverlayShader.metal; sourceTree = "<group>"; };
 		EB4A6E43273BA456005A30AB /* FaceOverlayFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceOverlayFilter.swift; sourceTree = "<group>"; };
@@ -103,15 +98,12 @@
 		EB4A6EBA273BA887005A30AB /* CGContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGContextExtensions.swift; sourceTree = "<group>"; };
 		EB4A6EBB273BA887005A30AB /* MTLTextureExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTLTextureExtensions.swift; sourceTree = "<group>"; };
 		EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
-		EB4A6EC1273BA8BC005A30AB /* TonguePositionClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TonguePositionClassification.mlmodel; sourceTree = "<group>"; };
 		EB565EEB273C028100D3A681 /* CameraRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRenderer.swift; sourceTree = "<group>"; };
 		EB565EED273C04DD00D3A681 /* MetalHandledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalHandledView.swift; sourceTree = "<group>"; };
 		EB565EF0273C604100D3A681 /* PhotosPoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPoolView.swift; sourceTree = "<group>"; };
 		EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPoolViewModel.swift; sourceTree = "<group>"; };
 		EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		EB565EF6273C774100D3A681 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
-		EB565EF8273D68FA00D3A681 /* TongueClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TongueClassifier.mlmodel; sourceTree = "<group>"; };
-		EB565EFA273E728D00D3A681 /* testimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testimage.png; sourceTree = "<group>"; };
 		EBC88A9927CF414300642B90 /* CarNumberDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNumberDetector.swift; sourceTree = "<group>"; };
 		EBC88A9B27CF665900642B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,9 +158,6 @@
 		EB4A6E05273BA148005A30AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB565EFA273E728D00D3A681 /* testimage.png */,
-				EB4A6EC1273BA8BC005A30AB /* TonguePositionClassification.mlmodel */,
-				EB565EF8273D68FA00D3A681 /* TongueClassifier.mlmodel */,
 				EB4A6DFB273BA108005A30AB /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -279,7 +268,6 @@
 				EB4A6E36273BA456005A30AB /* ImageCropping.metal */,
 				EB4A6E37273BA456005A30AB /* FaceAdjustShader.metal */,
 				EB4A6E38273BA456005A30AB /* ImageCropping.swift */,
-				EB4A6E39273BA456005A30AB /* FaceAdjustFilter.swift */,
 			);
 			path = FaceAdjust;
 			sourceTree = "<group>";
@@ -375,7 +363,6 @@
 			files = (
 				EB4A6DFF273BA108005A30AB /* Preview Assets.xcassets in Resources */,
 				EB4A6DFC273BA108005A30AB /* Assets.xcassets in Resources */,
-				EB565EFB273E728E00D3A681 /* testimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,9 +402,7 @@
 				EB4A6EB3273BA7E8005A30AB /* CVPixelBufferExtensions.swift in Sources */,
 				EB565EEE273C04DD00D3A681 /* MetalHandledView.swift in Sources */,
 				EB4A6E0A273BA1AA005A30AB /* MainContentViewModel.swift in Sources */,
-				EB4A6EC2273BA8BC005A30AB /* TonguePositionClassification.mlmodel in Sources */,
 				EB4A6E99273BA52C005A30AB /* FaceAdjustShader.metal in Sources */,
-				EB4A6E97273BA52C005A30AB /* FaceAdjustFilter.swift in Sources */,
 				EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */,
 				EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */,
 				EB4A6E9E273BA53C005A30AB /* FaceOverlayShader.metal in Sources */,
@@ -432,7 +417,6 @@
 				EB565EF5273C626F00D3A681 /* FileManagerExtensions.swift in Sources */,
 				EB4A6E96273BA52C005A30AB /* ImageCropping.swift in Sources */,
 				EB4A6EBE273BA887005A30AB /* CGContextExtensions.swift in Sources */,
-				EB565EF9273D68FB00D3A681 /* TongueClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L9DCNBKQG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Svetofor/Info.plist;
@@ -598,7 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L9DCNBKQG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Svetofor/Info.plist;

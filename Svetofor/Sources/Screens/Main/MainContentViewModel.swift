@@ -34,9 +34,7 @@ class MainContentViewModel: ObservableObject {
     
     func changeShouldStorePictures() {
         self.shouldStorePictures = !self.shouldStorePictures
-        self.shouldStorePicturesLabel = self.shouldStorePictures == false ? "Start Store Pictures" : "Stop Store Pictures"
-        
-        self.samplesMetalImporter?.faceAdjustFilter.shouldStorePictures = self.shouldStorePictures
+        self.shouldStorePicturesLabel = self.shouldStorePictures == false ? "Start Store Pictures" : "Stop Store Pictures"        
     }
     
     func setup() {

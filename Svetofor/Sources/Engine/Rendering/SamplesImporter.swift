@@ -32,9 +32,7 @@ class SamplesMetalImporter: SamplesImporter {
 
     private let faceDetector: FaceDetector
     private let carNumberDetector: CarNumberDetector
-    
-    let faceAdjustFilter: FaceAdjustFilter
-    
+        
     var lastResultCarNumber: String? = nil
     
 	init(device: MTLDevice?, commandQueue: MTLCommandQueue?) {
@@ -43,7 +41,6 @@ class SamplesMetalImporter: SamplesImporter {
 		self.yuvImporter = YUVImporterMetal(device: device)
 		self.faceDetector = FaceDetector()
         self.carNumberDetector = CarNumberDetector()
-        self.faceAdjustFilter = FaceAdjustFilter(device: device)
 	}
 	
 	func setup() {
@@ -97,13 +94,6 @@ class SamplesMetalImporter: SamplesImporter {
 		
         resultTexture.map() { inputTexture in
             if imageBuffer != nil {
-                var faceTexture: MTLTexture? = inputTexture
-                for face in self.faceDetector.requestLastAvailableFaces() {
-                    faceTexture = faceTexture.flatMap() {
-                        self.faceAdjustFilter.apppyEffect(inputTexture: $0, withFace: face, in: commandBuffer, commandQueue: self.commandQueue)
-                        }
-                }
-                
                 var summaryString = String()
 
                 for carNumber in self.carNumberDetector.requestLastAvailableCarNumbers() {
@@ -132,8 +122,7 @@ class SamplesMetalImporter: SamplesImporter {
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PredictedTongues"), object: "\(text)")
                 }
                 
-                resultTexture = faceTexture ?? inputTexture
-//                self.faceDetector.scheduleNewFace(from: imageBuffer!)
+                resultTexture = inputTexture
                 imageBuffer.map { self.carNumberDetector.scheduleNewCarNumber(from: $0) }
             }
         }
