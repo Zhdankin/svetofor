@@ -21,27 +21,35 @@ struct MainContentView: View {
                         .keyboardType(UIKit.UIKeyboardType.default)
                         .disableAutocorrection(true)
                         .padding()
+                        .font(.system(size: 60))
                     
                     Button {
                         viewModel.performVerifyCarNumber()
                     } label: {
                         Image(systemName: "paperplane")
                     }.padding()
-                        .alert(viewModel.alertTitle, isPresented: $viewModel.isErrorShowingAlert, actions: {
-                            Button("OK", role: .cancel) { }
-                        }, message: {
+                    
+                    
+                    if viewModel.isErrorShowingAlert {
+                        VStack {
+                            Text(viewModel.alertTitle)
                             Text(viewModel.alertMessage)
-                        })
-                        .alert(viewModel.alertTitle, isPresented: $viewModel.isGoodCarShowingAlert, actions: {
-                            Button("OK", role: .cancel) { }
-                        }, message: {
-                            Text(viewModel.alertMessage).foregroundColor(Color.green)
-                        })
-                        .alert(viewModel.alertTitle, isPresented: $viewModel.isBadCarShowingAlert, actions: {
-                            Button("OK", role: .cancel) { }
-                        }, message: {
-                            Text(viewModel.alertMessage).foregroundColor(Color.red)
-                        })
+                        }
+                    }
+                    else if viewModel.isGoodCarShowingAlert {
+                        VStack {
+                            Text(viewModel.alertTitle).font(.system(size: 80))
+                            Text(viewModel.alertMessage).font(.system(size: 25))
+                        }
+                        
+                    }
+                    else if viewModel.isBadCarShowingAlert {
+                        VStack {
+                            Text(viewModel.alertTitle).font(.system(size: 80))
+                            Text(viewModel.alertMessage).foregroundColor(Color.red).font(.system(size: 25))
+                        }
+                        
+                    }
                 }
                 
                 Spacer()

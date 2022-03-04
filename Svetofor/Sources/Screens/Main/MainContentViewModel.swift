@@ -86,7 +86,13 @@ class MainContentViewModel: ObservableObject {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "PredictedTongues"), object: nil, queue: OperationQueue.main) { note in
             if let string = note.object as? String {
-                self.predictedLabel = string
+                if self.predictedLabel != string {
+                    self.predictedLabel = string
+                    
+                    DispatchQueue.main.async {
+                        self.performVerifyCarNumber()
+                    }
+                }
             }
         }
     }
@@ -100,11 +106,16 @@ class MainContentViewModel: ObservableObject {
     }
     
     func performVerifyCarNumber() {
+        self.isErrorShowingAlert = false
+        self.isBadCarShowingAlert = false
+        self.isGoodCarShowingAlert = false
+
         if predictedLabel.count > 0 {
-            webAPIClient.requestCheckCarNumber(carNumber: predictedLabel) {
+            let carNumber = predictedLabel
+            webAPIClient.requestCheckCarNumber(carNumber: carNumber) {
                 switch $0 {
                 case .success(let response):
-                    self.alertTitle = NSLocalizedString("Проблемна машина", comment: "")
+                    self.alertTitle = NSLocalizedString("Проблемна машина: \(carNumber)", comment: "")
                     self.alertMessage = response.data.description
                     self.isBadCarShowingAlert = true
                     
@@ -114,7 +125,7 @@ class MainContentViewModel: ObservableObject {
                     case .logicError(let code, let message):
                         if code == "ERR_NOT_FOUND" {
                             self.alertTitle = "Все добре"
-                            self.alertMessage = "Машина не знайдена в базі"
+                            self.alertMessage = "Машина \(carNumber) не знайдена в базі"
                         }
                         else {
                             self.alertTitle = code
