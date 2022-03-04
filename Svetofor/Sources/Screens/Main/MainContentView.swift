@@ -37,7 +37,7 @@ struct MainContentView: View {
                         }, message: {
                             Text(viewModel.alertMessage).foregroundColor(Color.green)
                         })
-                        .alert(viewModel.alertTitle, isPresented: $viewModel.isGoodCarShowingAlert, actions: {
+                        .alert(viewModel.alertTitle, isPresented: $viewModel.isBadCarShowingAlert, actions: {
                             Button("OK", role: .cancel) { }
                         }, message: {
                             Text(viewModel.alertMessage).foregroundColor(Color.red)

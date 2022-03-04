@@ -104,7 +104,7 @@ class MainContentViewModel: ObservableObject {
             webAPIClient.requestCheckCarNumber(carNumber: predictedLabel) {
                 switch $0 {
                 case .success(let response):
-                    self.alertTitle = NSLocalizedString("Car is lost", comment: "")
+                    self.alertTitle = NSLocalizedString("Проблемна машина", comment: "")
                     self.alertMessage = response.data.description
                     self.isBadCarShowingAlert = true
                     
