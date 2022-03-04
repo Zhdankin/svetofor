@@ -14,7 +14,7 @@ class WebAPIClient {
     let session: URLSession
 
     var webAPIURL: URL {
-        return URL(string: "http://138.201.214.73:8080/external")!
+        return URL(string: "http://carinfo.ignisfatum.ltd/")!
     }
     
     init() {
@@ -24,11 +24,9 @@ class WebAPIClient {
     
     func requestCheckCarNumber(carNumber: String, completion: @escaping (Result<CarNumberCheckDataResponse, VerifyCarNumberError>) -> Void) {
         let url = self.webAPIURL
-            .appendingPathComponent("external")
-            .appendingPathComponent("car")
 
         var urlComponents = URLComponents.init(url: url, resolvingAgainstBaseURL: false)
-        urlComponents?.queryItems = [URLQueryItem(name: "car_plate", value: carNumber)]
+        urlComponents?.queryItems = [URLQueryItem(name: "car_plate", value: carNumber.lowercased())]
         
         
         urlComponents?.url.map {

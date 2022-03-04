@@ -14,16 +14,13 @@ struct MainContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ZStack {
-                    CameraViewRepresentable(renderer: viewModel)
-                        .frame(width: UIScreen.main.minSize, height: UIScreen.main.minSize * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
-                        .padding()
-                }
                 
-                Spacer()
-
                 VStack {
-                    Text(viewModel.predictedLabel)
+                    TextField("#", text: $viewModel.predictedLabel)
+                        .multilineTextAlignment(.center)
+                        .keyboardType(UIKit.UIKeyboardType.default)
+                        .disableAutocorrection(true)
+                        .padding()
                     
                     Button {
                         viewModel.performVerifyCarNumber()
@@ -46,6 +43,20 @@ struct MainContentView: View {
                             Text(viewModel.alertMessage).foregroundColor(Color.red)
                         })
                 }
+                
+                Spacer()
+
+                GeometryReader { proxy in
+                    HStack {
+                        Spacer()
+                        CameraViewRepresentable(renderer: viewModel)
+                            .frame(width: proxy.size.minSize, height: proxy.size.minSize * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
+                        Spacer()
+                    }
+                }
+                
+                
+
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

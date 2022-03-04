@@ -57,6 +57,8 @@
 		EB565EF3273C60B700D3A681 /* PhotosPoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */; };
 		EB565EF5273C626F00D3A681 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */; };
 		EB565EF7273C774100D3A681 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB565EF6273C774100D3A681 /* PhotoView.swift */; };
+		EB667B8D27D2352F002D63AF /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB667B8C27D2352F002D63AF /* CGRectExtensions.swift */; };
+		EB667B8F27D23570002D63AF /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB667B8E27D23570002D63AF /* CGSizeExtensions.swift */; };
 		EBC88A9A27CF414300642B90 /* CarNumberDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC88A9927CF414300642B90 /* CarNumberDetector.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +116,8 @@
 		EB565EF2273C60B700D3A681 /* PhotosPoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPoolViewModel.swift; sourceTree = "<group>"; };
 		EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		EB565EF6273C774100D3A681 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		EB667B8C27D2352F002D63AF /* CGRectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CGRectExtensions.swift; path = Svetofor/Sources/ClassExtensions/CGRectExtensions.swift; sourceTree = SOURCE_ROOT; };
+		EB667B8E27D23570002D63AF /* CGSizeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CGSizeExtensions.swift; path = Svetofor/Sources/ClassExtensions/CGSizeExtensions.swift; sourceTree = SOURCE_ROOT; };
 		EBC88A9927CF414300642B90 /* CarNumberDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNumberDetector.swift; sourceTree = "<group>"; };
 		EBC88A9B27CF665900642B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,6 +324,8 @@
 				EB4A6EBC273BA887005A30AB /* UIImageExtensions.swift */,
 				EB565EF4273C626F00D3A681 /* FileManagerExtensions.swift */,
 				EB2B71DC27CF749800FFC2E0 /* UIScreen.swift */,
+				EB667B8C27D2352F002D63AF /* CGRectExtensions.swift */,
+				EB667B8E27D23570002D63AF /* CGSizeExtensions.swift */,
 			);
 			path = ClassExtensions;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				EB4A6E66273BA462005A30AB /* VideoCapturerConfiguration.swift in Sources */,
 				EB4A6E69273BA462005A30AB /* AudioSampler.swift in Sources */,
 				EB565EEC273C028100D3A681 /* CameraRenderer.swift in Sources */,
+				EB667B8F27D23570002D63AF /* CGSizeExtensions.swift in Sources */,
 				EB4A6E0D273BA323005A30AB /* CameraViewRepresentable.swift in Sources */,
 				EB2B71E327CF858700FFC2E0 /* CarNumberCheckDataResponse.swift in Sources */,
 				EB2B71E027CF835C00FFC2E0 /* WebClient.swift in Sources */,
@@ -441,6 +448,7 @@
 				EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */,
 				EB4A6DF8273BA106005A30AB /* TongueManipulatorApp.swift in Sources */,
 				EB4A6E9E273BA53C005A30AB /* FaceOverlayShader.metal in Sources */,
+				EB667B8D27D2352F002D63AF /* CGRectExtensions.swift in Sources */,
 				EB4A6E61273BA462005A30AB /* AudioRecorder.swift in Sources */,
 				EB4A6EBD273BA887005A30AB /* CGImageExtensions.swift in Sources */,
 				EB4A6EAE273BA7E8005A30AB /* Shaders.metal in Sources */,
@@ -582,7 +590,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svetofor/svetofor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
 				DEVELOPMENT_TEAM = L9DCNBKQG8;
 				ENABLE_PREVIEWS = YES;
@@ -616,7 +624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svetofor/svetofor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
 				DEVELOPMENT_TEAM = L9DCNBKQG8;
 				ENABLE_PREVIEWS = YES;

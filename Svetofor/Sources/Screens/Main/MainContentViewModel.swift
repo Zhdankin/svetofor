@@ -112,10 +112,16 @@ class MainContentViewModel: ObservableObject {
                 case .failure(let error):
                     switch error {
                     case .logicError(let code, let message):
-                        self.alertTitle = code
-                        self.alertMessage = message
+                        if code == "ERR_NOT_FOUND" {
+                            self.alertTitle = "Все добре"
+                            self.alertMessage = "Машина не знайдена в базі"
+                        }
+                        else {
+                            self.alertTitle = code
+                            self.alertMessage = message
+                        }
                         
-                        self.isBadCarShowingAlert = true
+                        self.isGoodCarShowingAlert = true
                     case .jsonError(let error):
                         self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
