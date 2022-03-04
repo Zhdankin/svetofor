@@ -114,8 +114,16 @@ class SamplesMetalImporter: SamplesImporter {
                     
                 }
                 
-                let pattern = "[A-ZА-Я]{2}[0-9]{4}[A-ZА-Я]{2}"
-                if let regeXpResult = summaryString.range(of: pattern, options: .regularExpression) {
+                let patternUA = "[A-ZА-Я]{2}[0-9]{4}[A-ZА-Я]{2}"
+                let patternRU = "[A-ZА-Я]{1}[0-9]{3}[A-ZА-Я]{2}[0-9]{3}"
+
+                if let regeXpResult = summaryString.range(of: patternRU, options: .regularExpression) {
+                    let text = summaryString[regeXpResult.lowerBound..<regeXpResult.upperBound]
+
+                    lastResultCarNumber = "\(text)"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PredictedTongues"), object: "\(text)")
+                }
+                else if let regeXpResult = summaryString.range(of: patternUA, options: .regularExpression) {
                     let text = summaryString[regeXpResult.lowerBound..<regeXpResult.upperBound]
                     lastResultCarNumber = "\(text)"
                     

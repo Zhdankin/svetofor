@@ -78,8 +78,8 @@ class MainContentViewModel: ObservableObject {
                     }
                 })
                 
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(100)) {
-                    self?.photoCapturer.setupAutoFocusMode(deviceLocation: .init(x: 0.5, y: 0.5))
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1000)) {
+                    self?.photoCapturer.setupContinuosAutoFocusMode(deviceLocation: .init(x: 0.5, y: 0.5))
                 }
             }
         }
