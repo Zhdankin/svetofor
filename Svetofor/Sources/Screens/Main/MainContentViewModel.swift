@@ -52,6 +52,8 @@ class MainContentViewModel: ObservableObject {
     }
     
     func setup() {
+        UIApplication.shared.isIdleTimerDisabled = true
+        
         let device = MTLCreateSystemDefaultDevice()
         let commandQueue = device?.makeCommandQueue(maxCommandBufferCount: 1)
         
