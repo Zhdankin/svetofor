@@ -11,6 +11,7 @@ import CoreMedia
 import SwiftUI
 
 
+
 class MainContentViewModel: ObservableObject {
     
     let photosPoolViewModel = PhotosPoolViewModel()
@@ -20,9 +21,11 @@ class MainContentViewModel: ObservableObject {
     private var samplesRenderer: SamplesMetalRenderer?
     private var samplesMetalImporter: SamplesMetalImporter?
 
-    @Published var isErrorShowingAlert: Bool = false
-    @Published var isGoodCarShowingAlert: Bool = false
-    @Published var isBadCarShowingAlert: Bool = false
+    @Published var carNumberState: CarNumberVerificationState = CarNumberVerificationState.none
+
+//    @Published var isErrorShowingAlert: Bool = false
+//    @Published var isGoodCarShowingAlert: Bool = false
+//    @Published var isBadCarShowingAlert: Bool = false
 
     @Published var alertMessage: String = ""
     @Published var alertTitle: String = ""
@@ -106,20 +109,30 @@ class MainContentViewModel: ObservableObject {
     }
     
     func performVerifyCarNumber() {
-        self.isErrorShowingAlert = false
-        self.isBadCarShowingAlert = false
-        self.isGoodCarShowingAlert = false
-
-        if predictedLabel.count > 0 {
-            let carNumber = predictedLabel
+        carNumberState = .none
+        var carNumber = predictedLabel.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).lowercased()
+        carNumber = carNumber.replacingOccurrences(of: "a", with: "а")
+        carNumber = carNumber.replacingOccurrences(of: "b", with: "в")
+        carNumber = carNumber.replacingOccurrences(of: "c", with: "с")
+        carNumber = carNumber.replacingOccurrences(of: "i", with: "і")
+        carNumber = carNumber.replacingOccurrences(of: "e", with: "е")
+        carNumber = carNumber.replacingOccurrences(of: "o", with: "о")
+        carNumber = carNumber.replacingOccurrences(of: "x", with: "х")
+        carNumber = carNumber.replacingOccurrences(of: "k", with: "к")
+        carNumber = carNumber.replacingOccurrences(of: "p", with: "р")
+        carNumber = carNumber.replacingOccurrences(of: "n", with: "н")
+        carNumber = carNumber.replacingOccurrences(of: "m", with: "м")
+        carNumber = carNumber.replacingOccurrences(of: "t", with: "т")
+        
+        carNumber = carNumber.lowercased()
+        if carNumber.count == 8 || carNumber.count == 9 {
             webAPIClient.requestCheckCarNumber(carNumber: carNumber) {
                 switch $0 {
                 case .success(let response):
                     self.alertTitle = NSLocalizedString("Проблемна машина: \(carNumber)", comment: "")
                     self.alertMessage = response.data.description
-                    self.isBadCarShowingAlert = true
+                    self.carNumberState = .badNumber
                     
-                    print(response.data)
                 case .failure(let error):
                     switch error {
                     case .logicError(let code, let message):
@@ -132,18 +145,22 @@ class MainContentViewModel: ObservableObject {
                             self.alertMessage = message
                         }
                         
-                        self.isGoodCarShowingAlert = true
+                        self.carNumberState = .goodNumber
                     case .jsonError(let error):
                         self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
-                        self.isErrorShowingAlert = true
+                        self.carNumberState = .error
                     case .other(let error):
                         self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
-                        self.isErrorShowingAlert = true
+                        self.carNumberState = .error
                     }
                 }
             }
+        }
+        else {
+            self.carNumberState = .none
+            self.alertMessage = ""
         }
     }
 

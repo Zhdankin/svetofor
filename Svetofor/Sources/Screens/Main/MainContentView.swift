@@ -22,34 +22,13 @@ struct MainContentView: View {
                         .disableAutocorrection(true)
                         .padding()
                         .font(.system(size: 60))
-                    
-                    Button {
-                        viewModel.performVerifyCarNumber()
-                    } label: {
-                        Image(systemName: "paperplane")
-                    }.padding()
+                        .onChange(of: viewModel.predictedLabel) { newValue in
+                            viewModel.performVerifyCarNumber()
+                        }
                     
                     
-                    if viewModel.isErrorShowingAlert {
-                        VStack {
-                            Text(viewModel.alertTitle)
-                            Text(viewModel.alertMessage)
-                        }
-                    }
-                    else if viewModel.isGoodCarShowingAlert {
-                        VStack {
-                            Text(viewModel.alertTitle).font(.system(size: 80))
-                            Text(viewModel.alertMessage).font(.system(size: 25))
-                        }
-                        
-                    }
-                    else if viewModel.isBadCarShowingAlert {
-                        VStack {
-                            Text(viewModel.alertTitle).font(.system(size: 80))
-                            Text(viewModel.alertMessage).foregroundColor(Color.red).font(.system(size: 25))
-                        }
-                        
-                    }
+                    Text(viewModel.alertMessage).font(.system(size: 25))
+                        .frame(width: nil, height: 60.0, alignment: .center)
                 }
                 
                 Spacer()
@@ -62,10 +41,7 @@ struct MainContentView: View {
                         Spacer()
                     }
                 }
-                
-                
-
-            }
+            }.background(Color(viewModel.carNumberState.bacgroundColor))
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarTitle("")

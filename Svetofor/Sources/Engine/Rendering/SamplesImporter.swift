@@ -114,8 +114,10 @@ class SamplesMetalImporter: SamplesImporter {
                     
                 }
                 
-                let patternUA = "[A-ZА-Я]{2}[0-9]{4}[A-ZА-Я]{2}"
-                let patternRU = "[A-ZА-Я]{1}[0-9]{3}[A-ZА-Я]{2}[0-9]{3}"
+                let translitSymbols = "ABCIEOXKPNMT"
+                
+                let patternUA = "[\(translitSymbols)А-Я]{2}[0-9]{4}[\(translitSymbols)А-Я]{2}"
+                let patternRU = "[\(translitSymbols)А-Я]{1}[0-9]{3}[\(translitSymbols)А-Я]{2}[0-9]{3}"
 
                 if let regeXpResult = summaryString.range(of: patternRU, options: .regularExpression) {
                     let text = summaryString[regeXpResult.lowerBound..<regeXpResult.upperBound]
@@ -128,6 +130,9 @@ class SamplesMetalImporter: SamplesImporter {
                     lastResultCarNumber = "\(text)"
                     
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PredictedTongues"), object: "\(text)")
+                }
+                else {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PredictedTongues"), object: "")
                 }
                 
                 resultTexture = inputTexture
