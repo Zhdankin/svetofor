@@ -117,12 +117,19 @@ class SamplesMetalImporter: SamplesImporter {
                 let translitSymbols = "ABCIEOXKPNMT"
                 
                 let patternUA = "[\(translitSymbols)А-Я]{2}[0-9]{4}[\(translitSymbols)А-Я]{2}"
+                let shortPatternUA = "[\(translitSymbols)А-Я]{2}[0-9]{3}[EBG]{1}"
                 let patternRU = "[\(translitSymbols)А-Я]{1}[0-9]{3}[\(translitSymbols)А-Я]{2}[0-9]{3}"
 
                 if let regeXpResult = summaryString.range(of: patternRU, options: .regularExpression) {
                     let text = summaryString[regeXpResult.lowerBound..<regeXpResult.upperBound]
 
                     lastResultCarNumber = "\(text)"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PredictedTongues"), object: "\(text)")
+                }
+                else if let regeXpResult = summaryString.range(of: shortPatternUA, options: .regularExpression) {
+                    let text = summaryString[regeXpResult.lowerBound..<regeXpResult.upperBound]
+                    lastResultCarNumber = "\(text)"
+                    
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PredictedTongues"), object: "\(text)")
                 }
                 else if let regeXpResult = summaryString.range(of: patternUA, options: .regularExpression) {
