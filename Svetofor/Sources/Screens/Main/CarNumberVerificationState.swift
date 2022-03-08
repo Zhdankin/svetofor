@@ -24,13 +24,13 @@ enum CarNumberVerificationState {
     var bacgroundColor: UIColor {
         switch self {
         case .none:
-            return UIColor.systemBackground
+            return UIColor.gray
         case .goodNumber:
             return UIColor.green
         case .badNumber:
             return UIColor.red
         case .error:
-            return UIColor.gray
+            return UIColor.blue
         }
     }
 }

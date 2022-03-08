@@ -37,7 +37,7 @@ struct MainContentView: View {
                     HStack {
                         Spacer()
                         CameraViewRepresentable(renderer: viewModel)
-                            .frame(width: proxy.size.minSize, height: proxy.size.minSize * viewModel.textureHeight / viewModel.textureWidth, alignment: .bottomTrailing)
+                            .frame(width: max(proxy.size.minSize - 16.0, 0.0), height: max(proxy.size.minSize * viewModel.textureHeight / viewModel.textureWidth - 16.0, 0.0), alignment: .bottomTrailing)
                         Spacer()
                     }
                 }

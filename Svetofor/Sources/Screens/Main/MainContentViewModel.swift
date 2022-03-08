@@ -23,12 +23,7 @@ class MainContentViewModel: ObservableObject {
 
     @Published var carNumberState: CarNumberVerificationState = CarNumberVerificationState.none
 
-//    @Published var isErrorShowingAlert: Bool = false
-//    @Published var isGoodCarShowingAlert: Bool = false
-//    @Published var isBadCarShowingAlert: Bool = false
-
     @Published var alertMessage: String = ""
-    @Published var alertTitle: String = ""
 
     @Published var isCameraAuthorized: Bool = false
     @Published var textureWidth: CGFloat = 1.0
@@ -38,9 +33,8 @@ class MainContentViewModel: ObservableObject {
     @Published var shouldStorePicturesLabel = "Start Store Pictures"
 
     @Published var predictedLabel: String = ""
+    private var lastPredictedLabel: String = ""
 
-    
-    
     init(photoCapturer: PhotoCapturer = PhotoCapturer(), webAPIClient: WebAPIClient = WebAPIClient()) {
         self.photoCapturer = photoCapturer
         self.webAPIClient = webAPIClient
@@ -91,7 +85,8 @@ class MainContentViewModel: ObservableObject {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "PredictedTongues"), object: nil, queue: OperationQueue.main) { note in
             if let string = note.object as? String {
-                if self.predictedLabel != string {
+                if self.lastPredictedLabel != string {
+                    self.lastPredictedLabel = string
                     self.predictedLabel = string
                     
                     DispatchQueue.main.async {
@@ -127,11 +122,10 @@ class MainContentViewModel: ObservableObject {
         carNumber = carNumber.replacingOccurrences(of: "t", with: "т")
         
         carNumber = carNumber.lowercased()
-        if carNumber.count == 8 || carNumber.count == 9 {
+        if carNumber.count == 8 || carNumber.count == 9 || carNumber.count == 6 {
             webAPIClient.requestCheckCarNumber(carNumber: carNumber) {
                 switch $0 {
                 case .success(let response):
-                    self.alertTitle = NSLocalizedString("Проблемна машина: \(carNumber)", comment: "")
                     self.alertMessage = response.data.description
                     self.carNumberState = .badNumber
                     
@@ -139,21 +133,17 @@ class MainContentViewModel: ObservableObject {
                     switch error {
                     case .logicError(let code, let message):
                         if code == "ERR_NOT_FOUND" {
-                            self.alertTitle = "Все добре"
                             self.alertMessage = "Машина \(carNumber) не знайдена в базі"
                         }
                         else {
-                            self.alertTitle = code
                             self.alertMessage = message
                         }
                         
                         self.carNumberState = .goodNumber
                     case .jsonError(let error):
-                        self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
                         self.carNumberState = .error
                     case .other(let error):
-                        self.alertTitle = NSLocalizedString("Error", comment: "")
                         self.alertMessage = error.localizedDescription
                         self.carNumberState = .error
                     }
