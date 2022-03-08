@@ -23,7 +23,7 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
 
 	var videoCapturerConfiguration: VideoCapturerConfiguration = {
 		var videoCapturerConfiguration = VideoCapturerConfiguration()
-		videoCapturerConfiguration.captureSessionPreset = AVCaptureSession.Preset.photo.rawValue
+		videoCapturerConfiguration.captureSessionPreset = AVCaptureSession.Preset.low.rawValue
 		return videoCapturerConfiguration
 	}()
 	
