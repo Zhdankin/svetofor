@@ -36,8 +36,9 @@ struct MainContentView: View {
                 GeometryReader { proxy in
                     HStack {
                         Spacer()
-                        CameraViewRepresentable(renderer: viewModel)
-                            .frame(width: max(proxy.size.minSize - 16.0, 0.0), height: max(proxy.size.minSize * viewModel.textureHeight / viewModel.textureWidth - 16.0, 0.0), alignment: .bottomTrailing)
+                        CameraViewRepresentable(renderer: viewModel, tapGestureHandler: {
+                            self.viewModel.changeFocusMode(deviceLocation: $0)
+                        }).frame(width: max(proxy.size.minSize - 16.0, 0.0), height: max(proxy.size.minSize * viewModel.textureHeight / viewModel.textureWidth - 16.0, 0.0), alignment: .bottomTrailing)
                         Spacer()
                     }
                 }

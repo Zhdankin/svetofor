@@ -77,7 +77,7 @@ class MainContentViewModel: ObservableObject {
                     }
                 })
                 
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1000)) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2000)) {
                     self?.photoCapturer.setupContinuosAutoFocusMode(deviceLocation: .init(x: 0.5, y: 0.5))
                 }
             }
@@ -95,6 +95,10 @@ class MainContentViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func changeFocusMode(deviceLocation: CGPoint? = .init(x: 0.5, y: 0.5)) {
+        self.photoCapturer.changeFocusMode(deviceLocation: deviceLocation)
     }
     
     func clearStoredData() {

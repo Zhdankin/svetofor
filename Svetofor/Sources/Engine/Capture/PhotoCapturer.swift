@@ -134,23 +134,32 @@ class PhotoCapturer: NSObject, AVCapturePhotoCaptureDelegate {
         return videoCapturer?.hasTorchMode ?? false
     }
     
-    func changeFocusMode() {
+    func changeFocusMode(deviceLocation: CGPoint? = .init(x: 0.5, y: 0.5)) {
+        self.session.beginConfiguration()
+        self.videoCapturer?.deviceFocusLocation = deviceLocation
+
         if self.videoCapturer?.focusMode == .autoFocus {
             self.videoCapturer?.focusMode = .continuousAutoFocus
         }
         else {
             self.videoCapturer?.focusMode = .autoFocus
         }
+        self.session.commitConfiguration()
     }
     
     func setupContinuosAutoFocusMode(deviceLocation: CGPoint?) {
+        self.session.beginConfiguration()
         self.videoCapturer?.deviceFocusLocation = deviceLocation
         self.videoCapturer?.focusMode = .continuousAutoFocus
+        self.session.commitConfiguration()
+
     }
     
     func setupAutoFocusMode(deviceLocation: CGPoint?) {
+        self.session.beginConfiguration()
         self.videoCapturer?.deviceFocusLocation = deviceLocation
         self.videoCapturer?.focusMode = .autoFocus
+        self.session.commitConfiguration()
     }
 }
 

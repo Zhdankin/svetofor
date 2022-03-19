@@ -86,6 +86,9 @@ class VideoCapturer {
             if videoCaptureDevice.isExposureModeSupported(.continuousAutoExposure) {
                 videoCaptureDevice.exposureMode = .continuousAutoExposure
             }
+            else if videoCaptureDevice.isExposureModeSupported(.autoExpose) {
+                videoCaptureDevice.exposureMode = .autoExpose
+            }
 
             videoCaptureDevice.isSubjectAreaChangeMonitoringEnabled = true
         }
