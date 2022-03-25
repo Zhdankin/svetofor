@@ -24,6 +24,7 @@ class MainContentViewModel: ObservableObject {
     @Published var carNumberState: CarNumberVerificationState = CarNumberVerificationState.none
 
     @Published var alertMessage: String = ""
+    @Published var openDataBotMessage: String = ""
 
     @Published var isCameraAuthorized: Bool = false
     @Published var textureWidth: CGFloat = 1.0
@@ -132,7 +133,7 @@ class MainContentViewModel: ObservableObject {
                 case .success(let response):
                     self.alertMessage = response.data.description
                     self.carNumberState = .badNumber
-                    
+                    self.getOpenDataBotInfo(carNumber: carNumber)
                 case .failure(let error):
                     switch error {
                     case .logicError(let code, let message):
@@ -144,6 +145,8 @@ class MainContentViewModel: ObservableObject {
                         }
                         
                         self.carNumberState = .goodNumber
+                        
+                        self.getOpenDataBotInfo(carNumber: carNumber)
                     case .jsonError(let error):
                         self.alertMessage = error.localizedDescription
                         self.carNumberState = .error
@@ -157,6 +160,18 @@ class MainContentViewModel: ObservableObject {
         else {
             self.carNumberState = .none
             self.alertMessage = ""
+        }
+    }
+    
+    private func getOpenDataBotInfo(carNumber: String) {
+        self.webAPIClient.requestOpenDatanbotCarNumberInfo(carNumber: carNumber) {
+            switch $0 {
+            case .success(let openDataBotTranportResponse):
+                let openDataBotMessage = "\(openDataBotTranportResponse.color) \(openDataBotTranportResponse.model) \(openDataBotTranportResponse.body))"
+                self.openDataBotMessage = openDataBotMessage
+            case .failure(_):
+                break
+            }
         }
     }
 

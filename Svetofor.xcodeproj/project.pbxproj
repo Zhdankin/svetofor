@@ -61,6 +61,8 @@
 		EB667B8F27D23570002D63AF /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB667B8E27D23570002D63AF /* CGSizeExtensions.swift */; };
 		EB8AD84B27D3387A009FA3B3 /* CarNumberVerificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8AD84A27D3387A009FA3B3 /* CarNumberVerificationState.swift */; };
 		EBC88A9A27CF414300642B90 /* CarNumberDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC88A9927CF414300642B90 /* CarNumberDetector.swift */; };
+		EBFD0DEE27EDD5CC00C9CF09 /* OpenDataBotTranportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD0DED27EDD5CC00C9CF09 /* OpenDataBotTranportResponse.swift */; };
+		EBFD0DF027EDD5D500C9CF09 /* OpenDataBotTranportErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD0DEF27EDD5D500C9CF09 /* OpenDataBotTranportErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +124,8 @@
 		EB8AD84A27D3387A009FA3B3 /* CarNumberVerificationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarNumberVerificationState.swift; path = Svetofor/Sources/Screens/Main/CarNumberVerificationState.swift; sourceTree = SOURCE_ROOT; };
 		EBC88A9927CF414300642B90 /* CarNumberDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNumberDetector.swift; sourceTree = "<group>"; };
 		EBC88A9B27CF665900642B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EBFD0DED27EDD5CC00C9CF09 /* OpenDataBotTranportResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenDataBotTranportResponse.swift; path = Svetofor/Sources/Network/Responses/OpenDataBotTranportResponse.swift; sourceTree = SOURCE_ROOT; };
+		EBFD0DEF27EDD5D500C9CF09 /* OpenDataBotTranportErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenDataBotTranportErrorResponse.swift; path = Svetofor/Sources/Network/Responses/OpenDataBotTranportErrorResponse.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 			children = (
 				EB2B71E227CF858700FFC2E0 /* CarNumberCheckDataResponse.swift */,
 				EB2B71E427CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift */,
+				EBFD0DED27EDD5CC00C9CF09 /* OpenDataBotTranportResponse.swift */,
+				EBFD0DEF27EDD5D500C9CF09 /* OpenDataBotTranportErrorResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 				EB4A6EB5273BA7E8005A30AB /* TextureCacheManager.swift in Sources */,
 				EB4A6EB1273BA7E8005A30AB /* FaceDetector.swift in Sources */,
 				EB565EF7273C774100D3A681 /* PhotoView.swift in Sources */,
+				EBFD0DF027EDD5D500C9CF09 /* OpenDataBotTranportErrorResponse.swift in Sources */,
 				EB2B71DD27CF749800FFC2E0 /* UIScreen.swift in Sources */,
 				EB4A6EB0273BA7E8005A30AB /* MTLDeviceExtensions.swift in Sources */,
 				EB4A6E7F273BA4F2005A30AB /* Filter.swift in Sources */,
@@ -447,6 +454,7 @@
 				EB4A6EB3273BA7E8005A30AB /* CVPixelBufferExtensions.swift in Sources */,
 				EB565EEE273C04DD00D3A681 /* MetalHandledView.swift in Sources */,
 				EB4A6E0A273BA1AA005A30AB /* MainContentViewModel.swift in Sources */,
+				EBFD0DEE27EDD5CC00C9CF09 /* OpenDataBotTranportResponse.swift in Sources */,
 				EB2B71E527CFB72000FFC2E0 /* CarNumberCheckDataErrorResponse.swift in Sources */,
 				EB4A6E99273BA52C005A30AB /* FaceAdjustShader.metal in Sources */,
 				EB4A6EC0273BA887005A30AB /* UIImageExtensions.swift in Sources */,
@@ -594,7 +602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svetofor/svetofor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
 				DEVELOPMENT_TEAM = L9DCNBKQG8;
 				ENABLE_PREVIEWS = YES;
@@ -614,10 +622,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobacorn.CarNumberDetector;
 				PRODUCT_NAME = CarNumberDetector;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -628,7 +636,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svetofor/svetofor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Svetofor/Preview Content\"";
 				DEVELOPMENT_TEAM = L9DCNBKQG8;
 				ENABLE_PREVIEWS = YES;
@@ -648,10 +656,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobacorn.CarNumberDetector;
 				PRODUCT_NAME = CarNumberDetector;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

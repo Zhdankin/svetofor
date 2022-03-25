@@ -29,6 +29,8 @@ struct MainContentView: View {
                     
                     Text(viewModel.alertMessage).font(.system(size: 25))
                         .frame(width: nil, height: 60.0, alignment: .center)
+                    Text(viewModel.openDataBotMessage).font(.system(size: 25))
+                        .frame(width: nil, height: 60.0, alignment: .center)
                 }
                 
                 Spacer()
