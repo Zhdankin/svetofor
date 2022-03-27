@@ -125,7 +125,8 @@ class MainContentViewModel: ObservableObject {
         carNumber = carNumber.replacingOccurrences(of: "n", with: "н")
         carNumber = carNumber.replacingOccurrences(of: "m", with: "м")
         carNumber = carNumber.replacingOccurrences(of: "t", with: "т")
-        
+        carNumber = carNumber.replacingOccurrences(of: "h", with: "н")
+
         carNumber = carNumber.lowercased()
         if carNumber.count == 8 || carNumber.count == 9 || carNumber.count == 6 {
             webAPIClient.requestCheckCarNumber(carNumber: carNumber) {
@@ -133,6 +134,7 @@ class MainContentViewModel: ObservableObject {
                 case .success(let response):
                     self.alertMessage = response.data.description
                     self.carNumberState = .badNumber
+                    self.openDataBotMessage = ""
                     self.getOpenDataBotInfo(carNumber: carNumber)
                 case .failure(let error):
                     switch error {
@@ -143,15 +145,18 @@ class MainContentViewModel: ObservableObject {
                         else {
                             self.alertMessage = message
                         }
-                        
+                        self.openDataBotMessage = ""
+
                         self.carNumberState = .goodNumber
                         
                         self.getOpenDataBotInfo(carNumber: carNumber)
                     case .jsonError(let error):
                         self.alertMessage = error.localizedDescription
+                        self.openDataBotMessage = ""
                         self.carNumberState = .error
                     case .other(let error):
                         self.alertMessage = error.localizedDescription
+                        self.openDataBotMessage = ""
                         self.carNumberState = .error
                     }
                 }
@@ -160,6 +165,7 @@ class MainContentViewModel: ObservableObject {
         else {
             self.carNumberState = .none
             self.alertMessage = ""
+            self.openDataBotMessage = ""
         }
     }
     

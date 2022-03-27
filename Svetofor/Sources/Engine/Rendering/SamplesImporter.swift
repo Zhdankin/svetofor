@@ -108,13 +108,15 @@ class SamplesMetalImporter: SamplesImporter {
                             .replacingOccurrences(of: "JA", with: "")
                             .replacingOccurrences(of: " ", with: "")
                             .replacingOccurrences(of: ".", with: "")
+                            .replacingOccurrences(of: "L", with: "I")
+                            .replacingOccurrences(of: "l", with: "I")
 
                         summaryString.append(contentsOf: trimmedString)
                     }
                     
                 }
                 
-                let translitSymbols = "ABCIEOXKPNMT"
+                let translitSymbols = "ABCIEOXKPNMTH"
                 
                 let patternUA = "[\(translitSymbols)А-Я]{2}[0-9]{4}[\(translitSymbols)А-Я]{2}"
                 let shortPatternUA = "[\(translitSymbols)А-Я]{2}[0-9]{3}[EBG]{1}"
