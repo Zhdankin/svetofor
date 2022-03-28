@@ -38,8 +38,8 @@ class CarNumberDetector {
             }
             request.recognitionLevel = .accurate
             request.recognitionLanguages = ["uk_UA", "ru_RU"]
-            request.usesLanguageCorrection = false
-            request.customWords = ["АА110011", "АІ991199", "A111EE777"]
+            request.usesLanguageCorrection = true
+            request.customWords = ["АА110011", "АІ991199", "A111EE777", "BC8961II"]
                         
             let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .up)
             

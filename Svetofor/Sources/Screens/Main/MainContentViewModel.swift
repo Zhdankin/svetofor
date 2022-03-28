@@ -90,6 +90,8 @@ class MainContentViewModel: ObservableObject {
                     self.lastPredictedLabel = string
                     self.predictedLabel = string
                     
+                    self.actualRequest = NSUUID().uuidString
+                    
                     DispatchQueue.main.async {
                         self.performVerifyCarNumber()
                     }
@@ -110,6 +112,8 @@ class MainContentViewModel: ObservableObject {
         }
     }
     
+    var actualRequest = NSUUID().uuidString
+    
     func performVerifyCarNumber() {
         carNumberState = .none
         var carNumber = predictedLabel.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).lowercased()
@@ -128,14 +132,24 @@ class MainContentViewModel: ObservableObject {
         carNumber = carNumber.replacingOccurrences(of: "h", with: "н")
 
         carNumber = carNumber.lowercased()
+        
+        let currentRequest = NSUUID().uuidString
+        self.actualRequest = currentRequest
+
         if carNumber.count == 8 || carNumber.count == 9 || carNumber.count == 6 {
+            
             webAPIClient.requestCheckCarNumber(carNumber: carNumber) {
+                if self.actualRequest != currentRequest {
+                    return
+                }
+                
                 switch $0 {
                 case .success(let response):
                     self.alertMessage = response.data.description
                     self.carNumberState = .badNumber
                     self.openDataBotMessage = ""
-                    self.getOpenDataBotInfo(carNumber: carNumber)
+                    
+                    self.getOpenDataBotInfo(carNumber: carNumber, currentRequest: currentRequest)
                 case .failure(let error):
                     switch error {
                     case .logicError(let code, let message):
@@ -149,7 +163,7 @@ class MainContentViewModel: ObservableObject {
 
                         self.carNumberState = .goodNumber
                         
-                        self.getOpenDataBotInfo(carNumber: carNumber)
+                        self.getOpenDataBotInfo(carNumber: carNumber, currentRequest: currentRequest)
                     case .jsonError(let error):
                         self.alertMessage = error.localizedDescription
                         self.openDataBotMessage = ""
@@ -163,20 +177,30 @@ class MainContentViewModel: ObservableObject {
             }
         }
         else {
-            self.carNumberState = .none
-            self.alertMessage = ""
-            self.openDataBotMessage = ""
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                if self.actualRequest != currentRequest {
+                    return
+                }
+                
+                self.carNumberState = .none
+                self.alertMessage = ""
+                self.openDataBotMessage = ""
+            }
         }
     }
     
-    private func getOpenDataBotInfo(carNumber: String) {
+    private func getOpenDataBotInfo(carNumber: String, currentRequest: String) {
         self.webAPIClient.requestOpenDatanbotCarNumberInfo(carNumber: carNumber) {
+            if self.actualRequest != currentRequest {
+                return
+            }
+            
             switch $0 {
             case .success(let openDataBotTranportResponse):
                 let openDataBotMessage = "\(openDataBotTranportResponse.color) \(openDataBotTranportResponse.model) \(openDataBotTranportResponse.body))"
                 self.openDataBotMessage = openDataBotMessage
             case .failure(_):
-                break
+                self.openDataBotMessage = ""
             }
         }
     }
